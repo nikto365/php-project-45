@@ -5,6 +5,9 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
+// The maximum number of correct answers required to win the game
+const MAX_CORRECT_ANSWERS = 3;
+
 /**
  * Main function for the game engine.
  *
@@ -23,12 +26,12 @@ function frameGame(string $condition, callable $generateQuestion): void
     // Счетчик правильных ответов
     $correctAnswersCount = 0;
 
-    while ($correctAnswersCount !== 3) {
+    while ($correctAnswersCount !== MAX_CORRECT_ANSWERS) {
         [$question, $correctAnswer] = $generateQuestion();
         line("Question: {$question}");
         $answer = prompt('Your answer ');
 
-        if ($answer === (string)$correctAnswer) {
+        if ($answer === $correctAnswer) {
             $correctAnswersCount++;
             line('Correct!');
         } else {
