@@ -1,6 +1,5 @@
 {
     "name": "hexlet/code",
-    "version": "1.0.0",
     "description": "project brain games",
     "autoload": {
 	    "files": [
@@ -10,8 +9,7 @@
         "src/Games/Calc.php",
         "src/Games/Gcd.php",
         "src/Games/Progress.php",
-        "src/Games/Prime.php",
-        "src/constants.php"
+        "src/Games/Prime.php"
 	     ]
     },
      "bin": [
@@ -24,7 +22,7 @@
 	],
     "authors": [
         {
-            "name": "nikto365",
+            "name": "polina_b",
             "email": "pbarmakova@gmail.com"
         }
     ],
