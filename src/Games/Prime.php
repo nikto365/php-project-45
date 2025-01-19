@@ -1,9 +1,13 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\frameGame;
 
+//The minimum number used as an operand
+const MIN_OPERAND = 0;
+// Maximum number used as an operand
+const MAX_OPERAND = 100;
 /**
  * Checks if a number is prime.
  *

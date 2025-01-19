@@ -1,8 +1,15 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\frameGame;
+
+//The minimum number used as an operand
+const MIN_OPERAND = 0;
+// Maximum number used as an operand
+const MAX_OPERAND = 100;
+// Divisor for checking even numbers
+const EVEN_DIVISOR = 2;
 
 /**
  * Checks if a number is even or odd.
@@ -12,7 +19,7 @@ use function BrainGames\Engine\frameGame;
  */
 function isEven(int $num): bool
 {
-    return $num % 2 === 0;
+    return $num % EVEN_DIVISOR === 0;
 }
 
 function runEven()

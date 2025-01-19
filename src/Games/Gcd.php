@@ -1,8 +1,13 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\frameGame;
+
+//The minimum number used as an operand
+const MIN_OPERAND = 0;
+// Maximum number used as an operand
+const MAX_OPERAND = 100;
 
 /**
  * Calculates the greatest common divisor of two numbers.
@@ -30,7 +35,7 @@ function runGcdGame()
         $secondNumber = rand(MIN_OPERAND, MAX_OPERAND);
         $correctAnswer = gcd($firstNumber, $secondNumber);
         $question = "{$firstNumber} {$secondNumber}";
-        return [$question, $correctAnswer];
+        return [$question, (string)$correctAnswer];
     };
 
     frameGame($rule, $generateQuestion);

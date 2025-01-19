@@ -1,9 +1,13 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\frameGame;
 
+//The minimum number used as an operand
+const MIN_OPERAND = 0;
+// Maximum number used as an operand
+const MAX_OPERAND = 100;
 /**
  * Calculates the result of the given expression.
  *
@@ -36,14 +40,16 @@ function runCalc(): void
     $rule = 'What is the result of the expression?';
 
     $generateQuestion = function () {
+        // Переменная для операторов
+        $operators = ['+', '-', '*'];
         $operand1 = rand(MIN_OPERAND, MAX_OPERAND);
         $operand2 = rand(MIN_OPERAND, MAX_OPERAND);
-        $operator = OPERATORS[array_rand(OPERATORS)];
+        $operator = $operators[array_rand($operators)];
 
         $question = "{$operand1} {$operator} {$operand2}";
         $correctAnswer = calculateResult($operand1, $operand2, $operator);
 
-        return [$question, $correctAnswer];
+        return [$question, (string)$correctAnswer];
     };
 
     frameGame($rule, $generateQuestion);
